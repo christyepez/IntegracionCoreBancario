@@ -1,0 +1,733 @@
+{
+    "configuration": {},
+    "description": "Description",
+    "documentation": {},
+    "id": 98838,
+    "lastModifiedAgent": "structurizr-cloud/dsl-editor/44720f25-7dc8-44a8-9ab6-26d497f64592",
+    "lastModifiedDate": "2025-01-11T16:57:20Z",
+    "lastModifiedUser": "christyepez@hotmail.com",
+    "model": {
+        "people": [
+            {
+                "description": "Persona que accede a los servicios bancarios a través de aplicaciones web y móviles.",
+                "id": "1",
+                "location": "Unspecified",
+                "name": "Cliente del banco",
+                "properties": {
+                    "structurizr.dsl.identifier": "cliente"
+                },
+                "relationships": [
+                    {
+                        "description": "Accede a servicios bancarios",
+                        "destinationId": "11",
+                        "id": "30",
+                        "sourceId": "1",
+                        "tags": "Relationship",
+                        "technology": "Interacción directa"
+                    },
+                    {
+                        "description": "Accede a servicios bancarios",
+                        "destinationId": "2",
+                        "id": "31",
+                        "linkedRelationshipId": "30",
+                        "sourceId": "1",
+                        "technology": "Interacción directa"
+                    }
+                ],
+                "tags": "Element,Person"
+            }
+        ],
+        "softwareSystems": [
+            {
+                "containers": [
+                    {
+                        "components": [
+                            {
+                                "description": "Almacena información crítica del sistema bancario tradicional.",
+                                "documentation": {},
+                                "id": "4",
+                                "name": "Base de Datos SQL Server",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "dbsqlserver"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "Microsoft SQL Server"
+                            },
+                            {
+                                "description": "Servicios legacy basados en SOAP para operaciones básicas.",
+                                "documentation": {},
+                                "id": "5",
+                                "name": "Servicios SOAP",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "serviciossoap"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "SOAP, XML"
+                            }
+                        ],
+                        "description": "Gestión de operaciones bancarias tradicionales.",
+                        "documentation": {},
+                        "id": "3",
+                        "name": "Core Bancario Tradicional",
+                        "properties": {
+                            "structurizr.dsl.identifier": "coretradicional"
+                        },
+                        "relationships": [
+                            {
+                                "description": "Sincronización de datos",
+                                "destinationId": "6",
+                                "id": "23",
+                                "sourceId": "3",
+                                "tags": "Relationship",
+                                "technology": "Canales seguros"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "components": [
+                            {
+                                "description": "Gestiona la autenticación de los usuarios.",
+                                "documentation": {},
+                                "id": "7",
+                                "name": "Servicio de Autenticación",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "authservice"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "OAuth2, JWT"
+                            },
+                            {
+                                "description": "Administra información de clientes y perfiles.",
+                                "documentation": {},
+                                "id": "8",
+                                "name": "Servicio de Usuarios",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "userservice"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "REST API, .NET Core"
+                            },
+                            {
+                                "description": "Gestiona operaciones bancarias y transferencias.",
+                                "documentation": {},
+                                "id": "9",
+                                "name": "Servicio de Transacciones",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "transactionservice"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "REST API, .NET Core"
+                            },
+                            {
+                                "description": "Base de datos moderna para almacenamiento de datos no relacionales.",
+                                "documentation": {},
+                                "id": "10",
+                                "name": "Base de Datos NoSQL",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "dbnosql"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "MongoDB"
+                            }
+                        ],
+                        "description": "Plataforma moderna que soporta servicios avanzados y transacciones en tiempo real.",
+                        "documentation": {},
+                        "id": "6",
+                        "name": "Core Bancario Digital",
+                        "properties": {
+                            "structurizr.dsl.identifier": "coredigital"
+                        },
+                        "relationships": [
+                            {
+                                "description": "Servicios REST",
+                                "destinationId": "11",
+                                "id": "24",
+                                "sourceId": "6",
+                                "tags": "Relationship",
+                                "technology": "API seguras"
+                            },
+                            {
+                                "description": "Exposición de servicios",
+                                "destinationId": "17",
+                                "id": "27",
+                                "sourceId": "6",
+                                "tags": "Relationship",
+                                "technology": "APIs públicas"
+                            },
+                            {
+                                "description": "Provee datos para análisis de riesgos",
+                                "destinationId": "19",
+                                "id": "28",
+                                "sourceId": "6",
+                                "tags": "Relationship",
+                                "technology": "Transacciones"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "components": [
+                            {
+                                "description": "Frontend para clientes basado en navegadores.",
+                                "documentation": {},
+                                "id": "12",
+                                "name": "Aplicación Web",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "webapp"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "Angular, Tailwind CSS"
+                            },
+                            {
+                                "description": "Aplicación móvil para acceso a servicios bancarios.",
+                                "documentation": {},
+                                "id": "13",
+                                "name": "Aplicación Móvil",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "mobileapp"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "Flutter"
+                            },
+                            {
+                                "description": "Punto de entrada unificado para los microservicios.",
+                                "documentation": {},
+                                "id": "14",
+                                "name": "API Gateway",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "apigateway"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "Kong API Gateway"
+                            }
+                        ],
+                        "description": "Frontend y backend que permiten la interacción de los clientes con los servicios bancarios.",
+                        "documentation": {},
+                        "id": "11",
+                        "name": "Sistema de Banca Web y Móvil",
+                        "properties": {
+                            "structurizr.dsl.identifier": "bancawebmovil"
+                        },
+                        "relationships": [
+                            {
+                                "description": "Procesamiento de pagos",
+                                "destinationId": "15",
+                                "id": "25",
+                                "sourceId": "11",
+                                "tags": "Relationship",
+                                "technology": "Conexión cifrada"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "components": [
+                            {
+                                "description": "Gestión de transacciones financieras.",
+                                "documentation": {},
+                                "id": "16",
+                                "name": "Procesador de Pagos",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "paymentprocessor"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "Java, Spring Boot"
+                            }
+                        ],
+                        "description": "Permite transacciones seguras a través de redes de pago como SWIFT y ISO 20022.",
+                        "documentation": {},
+                        "id": "15",
+                        "name": "Plataforma de Servicios de Pago",
+                        "properties": {
+                            "structurizr.dsl.identifier": "serviciospago"
+                        },
+                        "relationships": [
+                            {
+                                "description": "Actualización de datos transaccionales",
+                                "destinationId": "6",
+                                "id": "26",
+                                "sourceId": "15",
+                                "tags": "Relationship",
+                                "technology": "Canales seguros"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "components": [
+                            {
+                                "description": "Ofrece acceso seguro a servicios para socios.",
+                                "documentation": {},
+                                "id": "18",
+                                "name": "API para Socios",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "partnerapi"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "REST API"
+                            }
+                        ],
+                        "description": "Expone servicios bancarios para integraciones con plataformas externas.",
+                        "documentation": {},
+                        "id": "17",
+                        "name": "APIs de Open Finance",
+                        "properties": {
+                            "structurizr.dsl.identifier": "openfinance"
+                        },
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "components": [
+                            {
+                                "description": "Procesa datos transaccionales para evaluar riesgos.",
+                                "documentation": {},
+                                "id": "20",
+                                "name": "Motor de Evaluación de Riesgos",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "riskengine"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "Python, TensorFlow"
+                            }
+                        ],
+                        "description": "Monitorea y evalúa riesgos asociados a las operaciones bancarias.",
+                        "documentation": {},
+                        "id": "19",
+                        "name": "Sistema de Gestión de Riesgos",
+                        "properties": {
+                            "structurizr.dsl.identifier": "gestionriesgos"
+                        },
+                        "relationships": [
+                            {
+                                "description": "Análisis de anomalías",
+                                "destinationId": "21",
+                                "id": "29",
+                                "sourceId": "19",
+                                "tags": "Relationship",
+                                "technology": "Datos para modelos de ML"
+                            }
+                        ],
+                        "tags": "Element,Container"
+                    },
+                    {
+                        "components": [
+                            {
+                                "description": "Identifica patrones sospechosos utilizando modelos ML.",
+                                "documentation": {},
+                                "id": "22",
+                                "name": "Motor de Detección de Fraudes",
+                                "properties": {
+                                    "structurizr.dsl.identifier": "frauddetection"
+                                },
+                                "tags": "Element,Component",
+                                "technology": "Python, Scikit-learn"
+                            }
+                        ],
+                        "description": "Detecta y previene actividades sospechosas en tiempo real.",
+                        "documentation": {},
+                        "id": "21",
+                        "name": "Sistema de Prevención de Fraudes",
+                        "properties": {
+                            "structurizr.dsl.identifier": "prevfraudes"
+                        },
+                        "tags": "Element,Container"
+                    }
+                ],
+                "description": "Sistema principal que gestiona las operaciones y servicios bancarios.",
+                "documentation": {},
+                "id": "2",
+                "location": "Unspecified",
+                "name": "Sistema Bancario",
+                "properties": {
+                    "structurizr.dsl.identifier": "sistemadebanca"
+                },
+                "tags": "Element,Software System"
+            }
+        ]
+    },
+    "name": "Name",
+    "properties": {
+        "structurizr.dsl": "d29ya3NwYWNlIHsNCiAgICAvKg0KICAgICAqIE1vZGVsbzogUmVwcmVzZW50YSBsb3MgZWxlbWVudG9zIGRlbCBzaXN0ZW1hIHkgc3VzIHJlbGFjaW9uZXMuDQogICAgICovDQoNCiAgIG1vZGVsIHsNCiAgICAgICAgLyogUGVyc29uYTogQ2xpZW50ZSBkZWwgc2lzdGVtYSBiYW5jYXJpby4gKi8NCiAgICAgICAgQ2xpZW50ZSA9IHBlcnNvbiAiQ2xpZW50ZSBkZWwgYmFuY28iIHsNCiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJQZXJzb25hIHF1ZSBhY2NlZGUgYSBsb3Mgc2VydmljaW9zIGJhbmNhcmlvcyBhIHRyYXbDqXMgZGUgYXBsaWNhY2lvbmVzIHdlYiB5IG3Ds3ZpbGVzLiINCiAgICAgICAgfQ0KDQogICAgICAgIC8qIFNpc3RlbWEgQmFuY2FyaW8gKi8NCiAgICAgICAgU2lzdGVtYURlQmFuY2EgPSBzb2Z0d2FyZVN5c3RlbSAiU2lzdGVtYSBCYW5jYXJpbyIgew0KICAgICAgICAgICAgZGVzY3JpcHRpb24gIlNpc3RlbWEgcHJpbmNpcGFsIHF1ZSBnZXN0aW9uYSBsYXMgb3BlcmFjaW9uZXMgeSBzZXJ2aWNpb3MgYmFuY2FyaW9zLiINCg0KICAgICAgICAgICAgLyogQ29udGVuZWRvcjogQ29yZSBCYW5jYXJpbyBUcmFkaWNpb25hbCAqLw0KICAgICAgICAgICAgQ29yZVRyYWRpY2lvbmFsID0gY29udGFpbmVyICJDb3JlIEJhbmNhcmlvIFRyYWRpY2lvbmFsIiAiU2VydmljaW9zIHkgYmFzZXMgZGUgZGF0b3MgaGVyZWRhZGFzIiB7DQogICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkdlc3Rpw7NuIGRlIG9wZXJhY2lvbmVzIGJhbmNhcmlhcyB0cmFkaWNpb25hbGVzLiINCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICBEQlNRTFNlcnZlciA9IGNvbXBvbmVudCAiQmFzZSBkZSBEYXRvcyBTUUwgU2VydmVyIiB7DQogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJBbG1hY2VuYSBpbmZvcm1hY2nDs24gY3LDrXRpY2EgZGVsIHNpc3RlbWEgYmFuY2FyaW8gdHJhZGljaW9uYWwuIg0KICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJNaWNyb3NvZnQgU1FMIFNlcnZlciINCiAgICAgICAgICAgICAgICB9DQoNCiAgICAgICAgICAgICAgICBTZXJ2aWNpb3NTT0FQID0gY29tcG9uZW50ICJTZXJ2aWNpb3MgU09BUCIgew0KICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiU2VydmljaW9zIGxlZ2FjeSBiYXNhZG9zIGVuIFNPQVAgcGFyYSBvcGVyYWNpb25lcyBiw6FzaWNhcy4iDQogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIlNPQVAsIFhNTCINCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQoNCiAgICAgICAgICAgIC8qIENvbnRlbmVkb3I6IENvcmUgQmFuY2FyaW8gRGlnaXRhbCAqLw0KICAgICAgICAgICAgQ29yZURpZ2l0YWwgPSBjb250YWluZXIgIkNvcmUgQmFuY2FyaW8gRGlnaXRhbCIgIk1pY3Jvc2VydmljaW9zIHkgYmFzZXMgZGUgZGF0b3MgbW9kZXJuYXMiIHsNCiAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiUGxhdGFmb3JtYSBtb2Rlcm5hIHF1ZSBzb3BvcnRhIHNlcnZpY2lvcyBhdmFuemFkb3MgeSB0cmFuc2FjY2lvbmVzIGVuIHRpZW1wbyByZWFsLiINCg0KICAgICAgICAgICAgICAgIEF1dGhTZXJ2aWNlID0gY29tcG9uZW50ICJTZXJ2aWNpbyBkZSBBdXRlbnRpY2FjacOzbiIgew0KICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiR2VzdGlvbmEgbGEgYXV0ZW50aWNhY2nDs24gZGUgbG9zIHVzdWFyaW9zLiINCiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiT0F1dGgyLCBKV1QiDQogICAgICAgICAgICAgICAgfQ0KDQogICAgICAgICAgICAgICAgVXNlclNlcnZpY2UgPSBjb21wb25lbnQgIlNlcnZpY2lvIGRlIFVzdWFyaW9zIiB7DQogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJBZG1pbmlzdHJhIGluZm9ybWFjacOzbiBkZSBjbGllbnRlcyB5IHBlcmZpbGVzLiINCiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiUkVTVCBBUEksIC5ORVQgQ29yZSINCiAgICAgICAgICAgICAgICB9DQoNCiAgICAgICAgICAgICAgICBUcmFuc2FjdGlvblNlcnZpY2UgPSBjb21wb25lbnQgIlNlcnZpY2lvIGRlIFRyYW5zYWNjaW9uZXMiIHsNCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkdlc3Rpb25hIG9wZXJhY2lvbmVzIGJhbmNhcmlhcyB5IHRyYW5zZmVyZW5jaWFzLiINCiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiUkVTVCBBUEksIC5ORVQgQ29yZSINCiAgICAgICAgICAgICAgICB9DQoNCiAgICAgICAgICAgICAgICBEQk5vU1FMID0gY29tcG9uZW50ICJCYXNlIGRlIERhdG9zIE5vU1FMIiB7DQogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJCYXNlIGRlIGRhdG9zIG1vZGVybmEgcGFyYSBhbG1hY2VuYW1pZW50byBkZSBkYXRvcyBubyByZWxhY2lvbmFsZXMuIg0KICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJNb25nb0RCIg0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCg0KICAgICAgICAgICAgLyogQ29udGVuZWRvcjogU2lzdGVtYSBkZSBCYW5jYSBXZWIgeSBNw7N2aWwgKi8NCiAgICAgICAgICAgIEJhbmNhV2ViTW92aWwgPSBjb250YWluZXIgIlNpc3RlbWEgZGUgQmFuY2EgV2ViIHkgTcOzdmlsIiAiSW50ZXJmYXogZGUgdXN1YXJpbyB5IEFQSSBHYXRld2F5IiB7DQogICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkZyb250ZW5kIHkgYmFja2VuZCBxdWUgcGVybWl0ZW4gbGEgaW50ZXJhY2Npw7NuIGRlIGxvcyBjbGllbnRlcyBjb24gbG9zIHNlcnZpY2lvcyBiYW5jYXJpb3MuIg0KDQogICAgICAgICAgICAgICAgV2ViQXBwID0gY29tcG9uZW50ICJBcGxpY2FjacOzbiBXZWIiIHsNCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkZyb250ZW5kIHBhcmEgY2xpZW50ZXMgYmFzYWRvIGVuIG5hdmVnYWRvcmVzLiINCiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiQW5ndWxhciwgVGFpbHdpbmQgQ1NTIg0KICAgICAgICAgICAgICAgIH0NCg0KICAgICAgICAgICAgICAgIE1vYmlsZUFwcCA9IGNvbXBvbmVudCAiQXBsaWNhY2nDs24gTcOzdmlsIiB7DQogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJBcGxpY2FjacOzbiBtw7N2aWwgcGFyYSBhY2Nlc28gYSBzZXJ2aWNpb3MgYmFuY2FyaW9zLiINCiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiRmx1dHRlciINCiAgICAgICAgICAgICAgICB9DQoNCiAgICAgICAgICAgICAgICBBUElHYXRld2F5ID0gY29tcG9uZW50ICJBUEkgR2F0ZXdheSIgew0KICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiUHVudG8gZGUgZW50cmFkYSB1bmlmaWNhZG8gcGFyYSBsb3MgbWljcm9zZXJ2aWNpb3MuIg0KICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJLb25nIEFQSSBHYXRld2F5Ig0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCg0KICAgICAgICAgICAgLyogQ29udGVuZWRvcjogUGxhdGFmb3JtYSBkZSBTZXJ2aWNpb3MgZGUgUGFnbyAqLw0KICAgICAgICAgICAgU2VydmljaW9zUGFnbyA9IGNvbnRhaW5lciAiUGxhdGFmb3JtYSBkZSBTZXJ2aWNpb3MgZGUgUGFnbyIgIkNvbmV4acOzbiBjb24gcmVkZXMgZGUgcGFnbyBleHRlcm5hcyIgew0KICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJQZXJtaXRlIHRyYW5zYWNjaW9uZXMgc2VndXJhcyBhIHRyYXbDqXMgZGUgcmVkZXMgZGUgcGFnbyBjb21vIFNXSUZUIHkgSVNPIDIwMDIyLiINCg0KICAgICAgICAgICAgICAgIFBheW1lbnRQcm9jZXNzb3IgPSBjb21wb25lbnQgIlByb2Nlc2Fkb3IgZGUgUGFnb3MiIHsNCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkdlc3Rpw7NuIGRlIHRyYW5zYWNjaW9uZXMgZmluYW5jaWVyYXMuIg0KICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJKYXZhLCBTcHJpbmcgQm9vdCINCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQoNCiAgICAgICAgICAgIC8qIENvbnRlbmVkb3I6IEFQSXMgZGUgT3BlbiBGaW5hbmNlICovDQogICAgICAgICAgICBPcGVuRmluYW5jZSA9IGNvbnRhaW5lciAiQVBJcyBkZSBPcGVuIEZpbmFuY2UiICJTZXJ2aWNpb3MgcGFyYSBzb2Npb3MgeSB0ZXJjZXJvcyIgew0KICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJFeHBvbmUgc2VydmljaW9zIGJhbmNhcmlvcyBwYXJhIGludGVncmFjaW9uZXMgY29uIHBsYXRhZm9ybWFzIGV4dGVybmFzLiINCg0KICAgICAgICAgICAgICAgIFBhcnRuZXJBUEkgPSBjb21wb25lbnQgIkFQSSBwYXJhIFNvY2lvcyIgew0KICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiT2ZyZWNlIGFjY2VzbyBzZWd1cm8gYSBzZXJ2aWNpb3MgcGFyYSBzb2Npb3MuIg0KICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJSRVNUIEFQSSINCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQoNCiAgICAgICAgICAgIC8qIENvbnRlbmVkb3I6IFNpc3RlbWEgZGUgR2VzdGnDs24gZGUgUmllc2dvcyAqLw0KICAgICAgICAgICAgR2VzdGlvblJpZXNnb3MgPSBjb250YWluZXIgIlNpc3RlbWEgZGUgR2VzdGnDs24gZGUgUmllc2dvcyIgIkFuw6FsaXNpcyBlbiB0aWVtcG8gcmVhbCIgew0KICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNb25pdG9yZWEgeSBldmFsw7phIHJpZXNnb3MgYXNvY2lhZG9zIGEgbGFzIG9wZXJhY2lvbmVzIGJhbmNhcmlhcy4iDQoNCiAgICAgICAgICAgICAgICBSaXNrRW5naW5lID0gY29tcG9uZW50ICJNb3RvciBkZSBFdmFsdWFjacOzbiBkZSBSaWVzZ29zIiB7DQogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJQcm9jZXNhIGRhdG9zIHRyYW5zYWNjaW9uYWxlcyBwYXJhIGV2YWx1YXIgcmllc2dvcy4iDQogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIlB5dGhvbiwgVGVuc29yRmxvdyINCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQoNCiAgICAgICAgICAgIC8qIENvbnRlbmVkb3I6IFNpc3RlbWEgZGUgUHJldmVuY2nDs24gZGUgRnJhdWRlcyAqLw0KICAgICAgICAgICAgUHJldkZyYXVkZXMgPSBjb250YWluZXIgIlNpc3RlbWEgZGUgUHJldmVuY2nDs24gZGUgRnJhdWRlcyIgIk1vZGVsb3MgZGUgTWFjaGluZSBMZWFybmluZyIgew0KICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJEZXRlY3RhIHkgcHJldmllbmUgYWN0aXZpZGFkZXMgc29zcGVjaG9zYXMgZW4gdGllbXBvIHJlYWwuIg0KDQogICAgICAgICAgICAgICAgRnJhdWREZXRlY3Rpb24gPSBjb21wb25lbnQgIk1vdG9yIGRlIERldGVjY2nDs24gZGUgRnJhdWRlcyIgew0KICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiSWRlbnRpZmljYSBwYXRyb25lcyBzb3NwZWNob3NvcyB1dGlsaXphbmRvIG1vZGVsb3MgTUwuIg0KICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJQeXRob24sIFNjaWtpdC1sZWFybiINCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQoNCiAgICAgICAgICAgIC8qIFJlbGFjaW9uZXMgZW50cmUgY29udGVuZWRvcmVzICovDQogICAgICAgICAgICBDb3JlVHJhZGljaW9uYWwgLT4gQ29yZURpZ2l0YWwgIlNpbmNyb25pemFjacOzbiBkZSBkYXRvcyIgIkNhbmFsZXMgc2VndXJvcyINCiAgICAgICAgICAgIENvcmVEaWdpdGFsIC0+IEJhbmNhV2ViTW92aWwgIlNlcnZpY2lvcyBSRVNUIiAiQVBJIHNlZ3VyYXMiDQogICAgICAgICAgICBCYW5jYVdlYk1vdmlsIC0+IFNlcnZpY2lvc1BhZ28gIlByb2Nlc2FtaWVudG8gZGUgcGFnb3MiICJDb25leGnDs24gY2lmcmFkYSINCiAgICAgICAgICAgIFNlcnZpY2lvc1BhZ28gLT4gQ29yZURpZ2l0YWwgIkFjdHVhbGl6YWNpw7NuIGRlIGRhdG9zIHRyYW5zYWNjaW9uYWxlcyIgIkNhbmFsZXMgc2VndXJvcyINCiAgICAgICAgICAgIENvcmVEaWdpdGFsIC0+IE9wZW5GaW5hbmNlICJFeHBvc2ljacOzbiBkZSBzZXJ2aWNpb3MiICJBUElzIHDDumJsaWNhcyINCiAgICAgICAgICAgIENvcmVEaWdpdGFsIC0+IEdlc3Rpb25SaWVzZ29zICJQcm92ZWUgZGF0b3MgcGFyYSBhbsOhbGlzaXMgZGUgcmllc2dvcyIgIlRyYW5zYWNjaW9uZXMiDQogICAgICAgICAgICBHZXN0aW9uUmllc2dvcyAtPiBQcmV2RnJhdWRlcyAiQW7DoWxpc2lzIGRlIGFub21hbMOtYXMiICJEYXRvcyBwYXJhIG1vZGVsb3MgZGUgTUwiDQogICAgICAgIH0NCg0KICAgICAgICAvKiBSZWxhY2lvbmVzIGVudHJlIHBlcnNvbmFzIHkgZWwgc2lzdGVtYSAqLw0KICAgICAgICBDbGllbnRlIC0+IEJhbmNhV2ViTW92aWwgIkFjY2VkZSBhIHNlcnZpY2lvcyBiYW5jYXJpb3MiICJJbnRlcmFjY2nDs24gZGlyZWN0YSINCiAgICB9DQoNCiAgICAvKg0KICAgICAqIFZpc3RhczogRGVmaW5lIGPDs21vIHNlIHZpc3VhbGl6YW4gbG9zIGVsZW1lbnRvcyBkZWwgbW9kZWxvLg0KICAgICAqLw0KICAgIHZpZXdzIHsNCiAgICAgICAgLyogVmlzdGEgZGUgY29udGV4dG8gZGVsIHNpc3RlbWEgKi8NCiAgICAgICAgc3lzdGVtQ29udGV4dCBTaXN0ZW1hRGVCYW5jYSB7DQogICAgICAgICAgICBpbmNsdWRlICoNCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHINCiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJWaXN0YSBnZW5lcmFsIGRlbCBzaXN0ZW1hIGJhbmNhcmlvIHkgc3VzIGludGVyYWNjaW9uZXMgZXh0ZXJuYXMuIg0KICAgICAgICB9DQoNCiAgICAgICAgLyogVmlzdGEgZGUgY29udGVuZWRvcmVzICovDQogICAgICAgIGNvbnRhaW5lciBTaXN0ZW1hRGVCYW5jYSB7DQogICAgICAgICAgICBpbmNsdWRlICoNCiAgICAgICAgICAgIGF1dG9sYXlvdXQgdGINCiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJWaXN0YSBkZXRhbGxhZGEgZGUgbG9zIGNvbnRlbmVkb3JlcyBkZWwgc2lzdGVtYSBiYW5jYXJpby4iDQogICAgICAgIH0NCg0KICAgICAgICAvKiBWaXN0YSBkZSBjb21wb25lbnRlcyBkZWwgQ29yZSBCYW5jYXJpbyBUcmFkaWNpb25hbCAqLw0KICAgICAgICBjb21wb25lbnQgQ29yZVRyYWRpY2lvbmFsIHsNCiAgICAgICAgICAgIGluY2x1ZGUgKg0KICAgICAgICAgICAgYXV0b2xheW91dCBscg0KICAgICAgICAgICAgZGVzY3JpcHRpb24gIlZpc3RhIGRldGFsbGFkYSBkZSBsb3MgY29tcG9uZW50ZXMgZGVsIENvcmUgQmFuY2FyaW8gVHJhZGljaW9uYWwuIg0KICAgICAgICB9DQoNCiAgICAgICAgLyogVmlzdGEgZGUgY29tcG9uZW50ZXMgZGVsIENvcmUgQmFuY2FyaW8gRGlnaXRhbCAqLw0KICAgICAgICBjb21wb25lbnQgQ29yZURpZ2l0YWwgew0KICAgICAgICAgICAgaW5jbHVkZSAqDQogICAgICAgICAgICBhdXRvbGF5b3V0IGxyDQogICAgICAgICAgICBkZXNjcmlwdGlvbiAiVmlzdGEgZGV0YWxsYWRhIGRlIGxvcyBjb21wb25lbnRlcyBkZWwgQ29yZSBCYW5jYXJpbyBEaWdpdGFsLiINCiAgICAgICAgfQ0KDQogICAgICAgIC8qIFZpc3RhIGRlIGNvbXBvbmVudGVzIGRlbCBTaXN0ZW1hIGRlIEJhbmNhIFdlYiB5IE3Ds3ZpbCAqLw0KICAgICAgICBjb21wb25lbnQgQmFuY2FXZWJNb3ZpbCB7DQogICAgICAgICAgICBpbmNsdWRlICoNCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHINCiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJWaXN0YSBkZXRhbGxhZGEgZGUgbG9zIGNvbXBvbmVudGVzIGRlbCBTaXN0ZW1hIGRlIEJhbmNhIFdlYiB5IE3Ds3ZpbC4iDQogICAgICAgIH0NCg0KICAgICAgICAvKiBWaXN0YSBkZSBjb21wb25lbnRlcyBkZSBsYSBQbGF0YWZvcm1hIGRlIFNlcnZpY2lvcyBkZSBQYWdvICovDQogICAgICAgIGNvbXBvbmVudCBTZXJ2aWNpb3NQYWdvIHsNCiAgICAgICAgICAgIGluY2x1ZGUgKg0KICAgICAgICAgICAgYXV0b2xheW91dCBscg0KICAgICAgICAgICAgZGVzY3JpcHRpb24gIlZpc3RhIGRldGFsbGFkYSBkZSBsb3MgY29tcG9uZW50ZXMgZGUgbGEgUGxhdGFmb3JtYSBkZSBTZXJ2aWNpb3MgZGUgUGFnby4iDQogICAgICAgIH0NCg0KICAgICAgICAvKiBWaXN0YSBkZSBjb21wb25lbnRlcyBkZSBsYXMgQVBJcyBkZSBPcGVuIEZpbmFuY2UgKi8NCiAgICAgICAgY29tcG9uZW50IE9wZW5GaW5hbmNlIHsNCiAgICAgICAgICAgIGluY2x1ZGUgKg0KICAgICAgICAgICAgYXV0b2xheW91dCBscg0KICAgICAgICAgICAgZGVzY3JpcHRpb24gIlZpc3RhIGRldGFsbGFkYSBkZSBsb3MgY29tcG9uZW50ZXMgZGUgbGFzIEFQSXMgZGUgT3BlbiBGaW5hbmNlLiINCiAgICAgICAgfQ0KDQogICAgICAgIC8qIFZpc3RhIGRlIGNvbXBvbmVudGVzIGRlbCBTaXN0ZW1hIGRlIEdlc3Rpw7NuIGRlIFJpZXNnb3MgKi8NCiAgICAgICAgY29tcG9uZW50IEdlc3Rpb25SaWVzZ29zIHsNCiAgICAgICAgICAgIGluY2x1ZGUgKg0KICAgICAgICAgICAgYXV0b2xheW91dCBscg0KICAgICAgICAgICAgZGVzY3JpcHRpb24gIlZpc3RhIGRldGFsbGFkYSBkZSBsb3MgY29tcG9uZW50ZXMgZGVsIFNpc3RlbWEgZGUgR2VzdGnDs24gZGUgUmllc2dvcy4iDQogICAgICAgIH0NCg0KICAgICAgICAvKiBWaXN0YSBkZSBjb21wb25lbnRlcyBkZWwgU2lzdGVtYSBkZSBQcmV2ZW5jacOzbiBkZSBGcmF1ZGVzICovDQogICAgICAgIGNvbXBvbmVudCBQcmV2RnJhdWRlcyB7DQogICAgICAgICAgICBpbmNsdWRlICoNCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHINCiAgICAgICAgICAgIGRlc2NyaXB0aW9uICJWaXN0YSBkZXRhbGxhZGEgZGUgbG9zIGNvbXBvbmVudGVzIGRlbCBTaXN0ZW1hIGRlIFByZXZlbmNpw7NuIGRlIEZyYXVkZXMuIg0KICAgICAgICB9DQoNCiAgICAgICAgLyogRXN0aWxvcyBkZSBlbGVtZW50b3MgKi8NCiAgICAgICAgc3R5bGVzIHsNCiAgICAgICAgICAgIGVsZW1lbnQgIkNsaWVudGUiIHsNCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICNmZmNjMDANCiAgICAgICAgICAgICAgICBjb2xvciAjMDAwMDAwDQogICAgICAgICAgICAgICAgc2hhcGUgcGVyc29uDQogICAgICAgICAgICB9DQogICAgICAgICAgICBlbGVtZW50ICJDb3JlVHJhZGljaW9uYWwiIHsNCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICNmMmYyZjINCiAgICAgICAgICAgICAgICBzaGFwZSByb3VuZGVkQm94DQogICAgICAgICAgICB9DQogICAgICAgICAgICBlbGVtZW50ICJDb3JlRGlnaXRhbCIgew0KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzk5Y2NmZg0KICAgICAgICAgICAgICAgIHNoYXBlIHJvdW5kZWRCb3gNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGVsZW1lbnQgIkJhbmNhV2ViTW92aWwiIHsNCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMwMGNjNjYNCiAgICAgICAgICAgICAgICBzaGFwZSByb3VuZGVkQm94DQogICAgICAgICAgICB9DQogICAgICAgICAgICBlbGVtZW50ICJTZXJ2aWNpb3NQYWdvIiB7DQogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjZmY5OTY2DQogICAgICAgICAgICAgICAgc2hhcGUgcm91bmRlZEJveA0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZWxlbWVudCAiT3BlbkZpbmFuY2UiIHsNCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICNjYzk5ZmYNCiAgICAgICAgICAgICAgICBzaGFwZSByb3VuZGVkQm94DQogICAgICAgICAgICB9DQogICAgICAgICAgICBlbGVtZW50ICJHZXN0aW9uUmllc2dvcyIgew0KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzY2OTlmZg0KICAgICAgICAgICAgICAgIHNoYXBlIHJvdW5kZWRCb3gNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGVsZW1lbnQgIlByZXZGcmF1ZGVzIiB7DQogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjZmY2NjY2DQogICAgICAgICAgICAgICAgc2hhcGUgcm91bmRlZEJveA0KICAgICAgICAgICAgfQ0KICAgICAgICB9DQogICAgfQ0KfQ=="
+    },
+    "views": {
+        "componentViews": [
+            {
+                "automaticLayout": {
+                    "applied": false,
+                    "edgeSeparation": 0,
+                    "implementation": "Graphviz",
+                    "nodeSeparation": 300,
+                    "rankDirection": "LeftRight",
+                    "rankSeparation": 300,
+                    "vertices": false
+                },
+                "containerId": "3",
+                "description": "Vista detallada de los componentes del Core Bancario Tradicional.",
+                "elements": [
+                    {
+                        "id": "4",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "5",
+                        "x": 0,
+                        "y": 0
+                    }
+                ],
+                "externalContainerBoundariesVisible": false,
+                "generatedKey": true,
+                "key": "Component-001",
+                "order": 3
+            },
+            {
+                "automaticLayout": {
+                    "applied": false,
+                    "edgeSeparation": 0,
+                    "implementation": "Graphviz",
+                    "nodeSeparation": 300,
+                    "rankDirection": "LeftRight",
+                    "rankSeparation": 300,
+                    "vertices": false
+                },
+                "containerId": "6",
+                "description": "Vista detallada de los componentes del Core Bancario Digital.",
+                "elements": [
+                    {
+                        "id": "7",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "8",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "9",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "10",
+                        "x": 0,
+                        "y": 0
+                    }
+                ],
+                "externalContainerBoundariesVisible": false,
+                "generatedKey": true,
+                "key": "Component-002",
+                "order": 4
+            },
+            {
+                "automaticLayout": {
+                    "applied": false,
+                    "edgeSeparation": 0,
+                    "implementation": "Graphviz",
+                    "nodeSeparation": 300,
+                    "rankDirection": "LeftRight",
+                    "rankSeparation": 300,
+                    "vertices": false
+                },
+                "containerId": "11",
+                "description": "Vista detallada de los componentes del Sistema de Banca Web y Móvil.",
+                "elements": [
+                    {
+                        "id": "12",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "13",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "14",
+                        "x": 0,
+                        "y": 0
+                    }
+                ],
+                "externalContainerBoundariesVisible": false,
+                "generatedKey": true,
+                "key": "Component-003",
+                "order": 5
+            },
+            {
+                "automaticLayout": {
+                    "applied": false,
+                    "edgeSeparation": 0,
+                    "implementation": "Graphviz",
+                    "nodeSeparation": 300,
+                    "rankDirection": "LeftRight",
+                    "rankSeparation": 300,
+                    "vertices": false
+                },
+                "containerId": "15",
+                "description": "Vista detallada de los componentes de la Plataforma de Servicios de Pago.",
+                "elements": [
+                    {
+                        "id": "16",
+                        "x": 0,
+                        "y": 0
+                    }
+                ],
+                "externalContainerBoundariesVisible": false,
+                "generatedKey": true,
+                "key": "Component-004",
+                "order": 6
+            },
+            {
+                "automaticLayout": {
+                    "applied": false,
+                    "edgeSeparation": 0,
+                    "implementation": "Graphviz",
+                    "nodeSeparation": 300,
+                    "rankDirection": "LeftRight",
+                    "rankSeparation": 300,
+                    "vertices": false
+                },
+                "containerId": "17",
+                "description": "Vista detallada de los componentes de las APIs de Open Finance.",
+                "elements": [
+                    {
+                        "id": "18",
+                        "x": 0,
+                        "y": 0
+                    }
+                ],
+                "externalContainerBoundariesVisible": false,
+                "generatedKey": true,
+                "key": "Component-005",
+                "order": 7
+            },
+            {
+                "automaticLayout": {
+                    "applied": false,
+                    "edgeSeparation": 0,
+                    "implementation": "Graphviz",
+                    "nodeSeparation": 300,
+                    "rankDirection": "LeftRight",
+                    "rankSeparation": 300,
+                    "vertices": false
+                },
+                "containerId": "19",
+                "description": "Vista detallada de los componentes del Sistema de Gestión de Riesgos.",
+                "elements": [
+                    {
+                        "id": "20",
+                        "x": 0,
+                        "y": 0
+                    }
+                ],
+                "externalContainerBoundariesVisible": false,
+                "generatedKey": true,
+                "key": "Component-006",
+                "order": 8
+            },
+            {
+                "automaticLayout": {
+                    "applied": false,
+                    "edgeSeparation": 0,
+                    "implementation": "Graphviz",
+                    "nodeSeparation": 300,
+                    "rankDirection": "LeftRight",
+                    "rankSeparation": 300,
+                    "vertices": false
+                },
+                "containerId": "21",
+                "description": "Vista detallada de los componentes del Sistema de Prevención de Fraudes.",
+                "elements": [
+                    {
+                        "id": "22",
+                        "x": 0,
+                        "y": 0
+                    }
+                ],
+                "externalContainerBoundariesVisible": false,
+                "generatedKey": true,
+                "key": "Component-007",
+                "order": 9
+            }
+        ],
+        "configuration": {
+            "branding": {},
+            "lastSavedView": "SystemContext-001",
+            "metadataSymbols": "SquareBrackets",
+            "styles": {
+                "elements": [
+                    {
+                        "background": "#ffcc00",
+                        "color": "#000000",
+                        "shape": "Person",
+                        "tag": "Cliente"
+                    },
+                    {
+                        "background": "#f2f2f2",
+                        "shape": "RoundedBox",
+                        "tag": "CoreTradicional"
+                    },
+                    {
+                        "background": "#99ccff",
+                        "shape": "RoundedBox",
+                        "tag": "CoreDigital"
+                    },
+                    {
+                        "background": "#00cc66",
+                        "shape": "RoundedBox",
+                        "tag": "BancaWebMovil"
+                    },
+                    {
+                        "background": "#ff9966",
+                        "shape": "RoundedBox",
+                        "tag": "ServiciosPago"
+                    },
+                    {
+                        "background": "#cc99ff",
+                        "shape": "RoundedBox",
+                        "tag": "OpenFinance"
+                    },
+                    {
+                        "background": "#6699ff",
+                        "shape": "RoundedBox",
+                        "tag": "GestionRiesgos"
+                    },
+                    {
+                        "background": "#ff6666",
+                        "shape": "RoundedBox",
+                        "tag": "PrevFraudes"
+                    }
+                ]
+            },
+            "terminology": {}
+        },
+        "containerViews": [
+            {
+                "automaticLayout": {
+                    "applied": false,
+                    "edgeSeparation": 0,
+                    "implementation": "Graphviz",
+                    "nodeSeparation": 300,
+                    "rankDirection": "TopBottom",
+                    "rankSeparation": 300,
+                    "vertices": false
+                },
+                "description": "Vista detallada de los contenedores del sistema bancario.",
+                "elements": [
+                    {
+                        "id": "1",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "3",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "6",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "11",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "15",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "17",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "19",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "id": "21",
+                        "x": 0,
+                        "y": 0
+                    }
+                ],
+                "externalSoftwareSystemBoundariesVisible": false,
+                "generatedKey": true,
+                "key": "Container-001",
+                "order": 2,
+                "relationships": [
+                    {
+                        "id": "23"
+                    },
+                    {
+                        "id": "24"
+                    },
+                    {
+                        "id": "25"
+                    },
+                    {
+                        "id": "26"
+                    },
+                    {
+                        "id": "27"
+                    },
+                    {
+                        "id": "28"
+                    },
+                    {
+                        "id": "29"
+                    },
+                    {
+                        "id": "30"
+                    }
+                ],
+                "softwareSystemId": "2"
+            }
+        ],
+        "systemContextViews": [
+            {
+                "automaticLayout": {
+                    "applied": true,
+                    "edgeSeparation": 0,
+                    "implementation": "Graphviz",
+                    "nodeSeparation": 300,
+                    "rankDirection": "LeftRight",
+                    "rankSeparation": 300,
+                    "vertices": false
+                },
+                "description": "Vista general del sistema bancario y sus interacciones externas.",
+                "dimensions": {
+                    "height": 700,
+                    "width": 1600
+                },
+                "elements": [
+                    {
+                        "id": "1",
+                        "x": 200,
+                        "y": 152
+                    },
+                    {
+                        "id": "2",
+                        "x": 950,
+                        "y": 152
+                    }
+                ],
+                "enterpriseBoundaryVisible": true,
+                "generatedKey": true,
+                "key": "SystemContext-001",
+                "order": 1,
+                "relationships": [
+                    {
+                        "id": "31"
+                    }
+                ],
+                "softwareSystemId": "2"
+            }
+        ]
+    }
+}
